@@ -1,5 +1,5 @@
 FROM        hasufell/gentoo-amd64-paludis:latest
-MAINTAINER  MAINTAINER Julian Ospald <hasufell@gentoo.org>
+MAINTAINER  Julian Ospald <hasufell@gentoo.org>
 
 # global USE flags
 RUN echo -e "*/* acl bash-completion ipv6 kmod openrc pcre readline unicode \
