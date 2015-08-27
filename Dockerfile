@@ -43,4 +43,4 @@ VOLUME ["/srv/www"]
 # web server
 EXPOSE 80 443
 
-CMD ["/usr/bin/supervisord", "-n"]
+CMD ["/usr/bin/supervisord", "-n", "-c /etc/supervisord.conf"]
