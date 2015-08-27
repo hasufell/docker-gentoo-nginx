@@ -35,22 +35,7 @@ RUN chgrp paludisbuild /dev/tty && cave resolve -z app-admin/supervisor sys-proc
 RUN etc-update --automode -5
 
 # supervisor config
-COPY ./config/supervisord.conf /etc/supervisord.conf
-
-# nginx config
-RUN rm -rf /srv/www
-RUN mkdir -p /srv/www
-RUN rm -rf /etc/nginx/conf.d/*
-RUN rm -v /etc/nginx/nginx.conf
-RUN rm -fv /etc/nginx/sites-enabled/*
-COPY ./config/ssl/ /etc/ssl/certs/
-COPY ./config/ca-ssl/ /etc/ssl/auth/
-COPY ./config/sites-enabled /etc/nginx/sites-enabled/
-COPY ./config/nginx.conf /etc/nginx/nginx.conf
-COPY ./config/conf.d /etc/nginx/conf.d/
-COPY ./config/www-static /srv/www/
-
-WORKDIR /etc/nginx
+COPY ./supervisord.conf /etc/supervisord.conf
 
 VOLUME ["/etc/nginx"]
 VOLUME ["/srv/www"]
