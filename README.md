@@ -1,4 +1,4 @@
-## Buld the container
+## Build the container
 
 ```
 docker build -t hasufell/gentoo-nginx .
@@ -9,3 +9,5 @@ docker build -t hasufell/gentoo-nginx .
 ```
 docker run -d -p 80:80 -p 443:443 hasufell/gentoo-nginx
 ```
+
+Available volumes are `/etc/nginx` and `/srv/www`.
