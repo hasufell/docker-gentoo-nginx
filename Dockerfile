@@ -34,8 +34,13 @@ RUN chgrp paludisbuild /dev/tty && cave resolve -z app-admin/supervisor sys-proc
 # update etc files... hope this doesn't screw up
 RUN etc-update --automode -5
 
+# copy nginx config
+COPY ./config/nginx.conf /etc/nginx/nginx.conf
+COPY ./config/sites-enabled /etc/nginx/sites-enabled
+COPY ./config/sites-available /etc/nginx/sites-available
+
 # supervisor config
-COPY ./supervisord.conf /etc/supervisord.conf
+COPY ./config/supervisord.conf /etc/supervisord.conf
 
 VOLUME ["/etc/nginx"]
 VOLUME ["/srv/www"]
