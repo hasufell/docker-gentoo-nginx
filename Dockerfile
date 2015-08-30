@@ -42,9 +42,6 @@ COPY ./config/sites-available /etc/nginx/sites-available
 # supervisor config
 COPY ./config/supervisord.conf /etc/supervisord.conf
 
-VOLUME ["/etc/nginx"]
-VOLUME ["/srv/www"]
-
 # web server
 EXPOSE 80 443
 
