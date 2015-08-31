@@ -45,3 +45,6 @@ docker run -ti -d \
 	hasufell/gentoo-nginx:latest \
 	sh -c 'cd /app && forego start -r'
 ```
+
+Also see [here](https://github.com/jwilder/nginx-proxy) for configuration
+instructions.
