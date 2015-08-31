@@ -21,7 +21,7 @@ www-servers/nginx http http-cache ipv6 pcre ssl \
 \nwww-servers/nginx NGINX_MODULES_HTTP: \
 access auth_basic auth_pam auth_request autoindex browser charset empty_gif \
 dav dav_ext fastcgi geo gzip limit_req limit_conn map memcached perl proxy \
-referer rewrite scgi ssi split_clients upstream_ip_hash userid uwsgi \
+referer rewrite scgi ssi spdy split_clients upstream_ip_hash userid uwsgi \
 " \
 	>> /etc/paludis/use.conf.d/nginx.conf
 
