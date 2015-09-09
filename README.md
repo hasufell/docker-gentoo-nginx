@@ -41,7 +41,7 @@ docker run -ti -d \
 	-p 80:80 -p 443:443 \
 	-v "`pwd`"/config/examples/nginx.tmpl:/app/nginx.tmpl \
 	-v "`pwd`"/config/examples/Procfile:/app/Procfile \
-	-v /var/run/docker.sock:/tmp/docker.sock:ro \
+	-v /var/run/docker.sock:/tmp/docker.sock \
 	-e DOCKER_HOST=unix:///tmp/docker.sock \
 	hasufell/gentoo-nginx:latest \
 	sh -c 'cd /app && forego start -r'
