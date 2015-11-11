@@ -33,3 +33,15 @@ something like:
 		ModSecurityConfig modsecurity/modsecurity.conf;
 	}
 ```
+
+If you want the rules to be automatically updated, you can use the script
+at `/usr/bin/update-modsec.sh` which runs at every 23th hour. Note that it
+requires the file `/etc/nginx/modsecurity/modsecurity.conf.orig` to be
+present (containing only base configuration without ruleset) which is true
+by default, but might not be true if you mounted in `/etc/nginx/modsecurity`
+from the host.
+
+E.g.:
+```sh
+docker exec -ti -d <nginx-container> update-modsec.sh
+```

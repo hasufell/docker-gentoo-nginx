@@ -37,6 +37,8 @@ RUN cat /etc/modsecurity/base_rules/*.conf >> \
 RUN sed -i \
 		-e 's|SecRuleEngine .*$|SecRuleEngine On|' \
 		/etc/nginx/modsecurity/modsecurity.conf
+COPY ./config/update-modsec.sh /usr/bin/update-modsec.sh
+RUN chmod +x /usr/bin/update-modsec.sh
 
 # supervisor config
 COPY ./config/supervisord.conf /etc/supervisord.conf
