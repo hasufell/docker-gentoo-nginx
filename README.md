@@ -1,7 +1,7 @@
 ## Build the container
 
 ```
-docker build -t hasufell/gentoo-nginx .
+docker build -t mosaiksoftware/gentoo-nginx .
 ```
 
 ## Run
@@ -15,7 +15,7 @@ docker run -d \
 	-p 443:443 \
 	-v /etc/nginx:/etc/nginx \
 	-v /srv/www:/srv/www \
-	hasufell/gentoo-nginx
+	mosaiksoftware/gentoo-nginx
 ```
 
 ## Enabling modsecurity
