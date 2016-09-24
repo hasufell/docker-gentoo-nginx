@@ -8,16 +8,11 @@ MAINTAINER  Julian Ospald <hasufell@gentoo.org>
 COPY ./config/paludis /etc/paludis
 
 # update world with our USE flags
-RUN chgrp paludisbuild /dev/tty && cave resolve -c world -x
-
-# install tools set
-RUN chgrp paludisbuild /dev/tty && cave resolve -c tools -x
-
-# install nginx
-RUN chgrp paludisbuild /dev/tty && cave resolve -c nginx -x
-
-# update etc files... hope this doesn't screw up
-RUN etc-update --automode -5
+RUN chgrp paludisbuild /dev/tty && cave resolve -c world -x && \
+	cave resolve -c tools -x && \
+	cave resolve -c nginx -x && \
+	etc-update --automode -5 && \
+	rm -rf /var/cache/paludis/distfiles/*
 
 ################################
 
