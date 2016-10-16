@@ -12,7 +12,8 @@ RUN chgrp paludisbuild /dev/tty && cave resolve -c world -x && \
 	cave resolve -c tools -x && \
 	cave resolve -c nginx -x && \
 	etc-update --automode -5 && \
-	rm -rf /var/cache/paludis/distfiles/*
+	rm -rf /usr/portage/distfiles/* /var/tmp/paludis/* \
+		/var/tmp/portage/*
 
 ################################
 
